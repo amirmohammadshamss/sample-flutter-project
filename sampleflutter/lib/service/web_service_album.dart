@@ -10,12 +10,12 @@ class WebServiceAlbum {
     'Content-Type': 'application/json; charset=UTF-8',
   };
 
-  Future<Album> createAlbum(String title) async {
+  Future<Album> createAlbumServise(String title) async {
     final response = await http.post(
       Uri.parse('${mainUrl}albums'),
       headers: headers,
       body: jsonEncode(<String, String>{
-        'title': 'quidem molestiae enim"',
+        'title': title,
       }),
     );
 

@@ -18,23 +18,23 @@ class FirstScreen extends StatelessWidget {
         children: [
           Center(
             child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  SecondScreen.routeName,
-                  arguments: ScreenArguments(
-                    'Extract Arguments Screen',
-                    'This message is extracted in the build method.',
-                  ),
-                );
-              }, child : const Text("Total price")
-            ),
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    SecondScreen.routeName,
+                    arguments: ScreenArguments(
+                      'Extract Arguments Screen',
+                      'This message is extracted in the build method.',
+                    ),
+                  );
+                },
+                child: const Text("Total price")),
           ),
           Consumer<CartModel>(
-                builder: (context, cart, child) {
-                  return Text("Total price: ${cart.totalPrice}");
-                },
-              ),
+            builder: (context, cart, child) {
+              return Text("Total price: ${cart.totalPrice}");
+            },
+          ),
         ],
       ),
     );
